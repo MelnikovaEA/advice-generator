@@ -1,0 +1,88 @@
+@import 'variables';
+
+.app {
+  font-size: 16px;
+  position: relative;
+  width: 33vw;
+  min-height: 35vh;
+  margin: 28vh auto 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: $dark-grayish-blue;
+  padding: 2em 0 0 0;
+  border-radius: 10px;
+
+  &__title {
+    font-size: 12px;
+    color: $neon-green;
+    letter-spacing: 0.3em;
+  }
+
+  &__advice {
+    margin-top: -1em;
+    line-height: 1.5em;
+    color: $light-cyan;
+    text-align: center;
+    display: grid;
+    align-items: center;
+    flex-grow: 1;
+    width: 70%;
+  }
+
+  &__button {
+    position: absolute;
+    width: 64px;
+    height: 64px;
+    padding: 20px;
+    border-radius: 50%;
+    border: none;
+    background-color: $neon-green;
+    bottom: -32px;
+    left: 50%;
+    transform: translateX(-50%);
+    box-shadow: 0 0 0 rgba(0, 0, 0, 0);
+
+    &::before {
+      content: "";
+      display: block;
+      position: absolute;
+      background-image: url("images/pattern-divider-desktop.svg");
+      background-size: 100%;
+      background-repeat: no-repeat;
+      width: 30vw;
+      height: 20px;
+      margin: 0 auto 7em auto;
+      left: calc(50% - 15vw);
+      bottom: -20px;
+    }
+
+    &:hover {
+      cursor: pointer;
+      box-shadow: 0 0 20px rgba($neon-green, 1);
+    }
+  }
+
+  &__button-wrapper {
+    padding-top: 46px;
+  }
+
+  @media(max-width: #{$tablet-width}) {
+    width: 70vw;
+    margin: 20vh auto 0 auto;
+    min-height: 45vh;
+  }
+
+  @media(max-width: #{$mobile-width}) {
+    width: 90vw;
+    margin: 12vh auto 0 auto;
+    min-height: 35vh;
+
+    &__button::before {
+      background-image: url("images/pattern-divider-mobile.svg");
+      width: 70vw;
+      left: calc(50% - 35vw);
+    }
+  }
+
+}

@@ -1,0 +1,8 @@
+{
+  "dependencies": {
+    "sass": "^1.77.6"
+  },
+  "scripts": {
+    "sass": "sass ./style/style.scss output.css"
+  }
+}
